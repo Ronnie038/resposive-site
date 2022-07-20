@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@400;500&display=swap');
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	position: relative;
+	font-family: 'Poppins', sans-serif;
+	max-width: 1280px;
+	text-align: center;
+	margin: 0 auto;
+}
+
+/* 
+
+    |root
+*/
+
+:root {
+	--btn-bg: #dd0000;
+	--bg-shadow: 1px 1px 1px 2px rgba(0, 0, 0, 0.233);
+}
+
+/* 
+| Reusble code
+*/
+.container {
+	max-width: 90%;
+	margin: 10px auto;
+	margin-top: 2rem;
+	margin-bottom: 5rem;
+}
+.flex_container {
+	display: flex;
+}
+
+.grid {
+	display: grid;
+}
+
+.btn {
+	border: none;
+
+	padding: 0.2rem 1rem;
+	border-radius: 5px;
+	cursor: pointer;
+	margin: 0.5rem 0;
+	text-decoration: none;
+}
+a {
+	text-decoration: none;
+	background: white;
+	padding: 5px;
+	font-size: 15px;
+}
+.active {
+	background-color: var(--btn-bg);
+	color: white;
+}
+h1 {
+	margin-top: 2rem;
+}
+p {
+	font-size: 0.8rem;
+	margin: 1rem 0;
+}
+
+/* 
+| section header start
+
+*/
+
+.section_header {
+	background-color: black;
+	justify-content: space-evenly;
+	color: white;
+	border-radius: 5px;
+}
+.section_header .header_left > button {
+	background-color: var(--btn-bg);
+	color: white;
+	transition: background 0.4s ease-in;
+}
+.section_header .header_left > button:hover {
+	background: rgb(128, 167, 240);
+}
+
+.header_left {
+	flex: 0.5;
+}
+.header_right img {
+	width: 100%;
+}
+
+/* 
+| section blog and start
+*/
+
+.section_blog .blog_left {
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 400px;
+	height: 200px;
+	padding: 0.5rem 1rem;
+	background-color: black;
+	border-radius: 5px;
+	margin-right: 1rem;
+}
+.blog_left a {
+	font-size: 10px;
+	text-align: center;
+	width: 100%;
+	padding: 8px 0;
+}
+
+.blog_right {
+	grid-template-columns: repeat(3, 1fr);
+	gap: 30px;
+}
+.blog_right figure img {
+	width: 100%;
+}
+.blog_right figure {
+	box-shadow: var(--bg-shadow);
+	border-radius: 10px;
+}
+
+.blog_right figure > figcaption,
+figure > button {
+	margin: 10px 10px;
+}
+
+.blog_icon {
+	margin-bottom: 10px;
+}
+.blog_icon span {
+	margin: 10px;
+}
+figure > button {
+	padding: 2px 5px;
+	background-color: white;
+	border-radius: 3px;
+	border: 1px solid black;
+	margin: 1rem;
+}
+
+/* 
+| Upcoming match
+*/
+
+.upcoming_match div {
+	align-items: center;
+	justify-content: center;
+}
+.upcoming_match div img {
+	width: 60%;
+	margin: 10px;
+}
+.upcoming_match {
+	padding: 3rem;
+	text-align: center;
+	border: 1px solid silver;
+	border-radius: 5px;
+}
+.upcoming_match p,
+h3 {
+	margin: 10px;
+}
+
+/* 
+| footer section start
+
+
+
+*/
+
+footer {
+	background-color: black;
+	color: white;
+	height: 300px;
+	text-align: center;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+
+footer hr {
+	border-color: #ffffff54;
+	margin-top: 3rem;
+	margin-bottom: 3rem;
+}
+
+footer span {
+	margin: 1rem;
+}
+footer ul {
+	list-style: none;
+	margin-top: 1rem;
+}
+
+footer ul li,
+li i,
+li a {
+	font-size: 2rem;
+	display: inline-block;
+	border-collapse: black;
+	margin: 0 1rem;
+}
+
+/* view all btn */
+
+.view-all {
+	background-color: var(--btn-bg);
+	border: none;
+	padding: 0.5rem 1rem;
+	border-radius: 5px;
+	margin: auto;
+	display: none;
+}
+
+/* 
+| Responsive section
+*/
+
+/* | max width 992px */
+
+@media screen and (min-width: 576px) and (max-width: 992px) {
+	.section_blog {
+		flex-direction: column;
+	}
+	.blog_left .btn {
+		border: 1px solid silver;
+		width: 30%;
+	}
+	.section_blog .blog_left {
+		width: 95%;
+		flex-direction: row;
+		justify-content: space-between;
+		background-color: white;
+	}
+	.blog_right {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 30px;
+	}
+	.view-all {
+		display: block;
+		margin-top: 1rem;
+		color: white;
+	}
+}
+
+/* | max width 576 */
+
+@media screen and (max-width: 576px) {
+	.section_header {
+		flex-direction: column;
+		padding-bottom: 1rem;
+	}
+	.section_header .header_right img {
+		width: 50%;
+	}
+	.section_header .header_left .btn {
+		font-size: 15px;
+		margin-bottom: 1rem;
+	}
+	.section_header .header_left p {
+		text-overflow: ellipsis;
+	}
+
+	.blog_right {
+		grid-template-columns: repeat(1, 1fr);
+		gap: 30px;
+	}
+	.section_blog {
+		flex-direction: column;
+	}
+	.section_blog .blog_left {
+		width: auto;
+		height: auto;
+		flex-direction: column;
+		justify-content: space-between;
+		background-color: white;
+	}
+	.blog_left .btn {
+		border: 1px solid silver;
+		width: auto;
+		padding: 0.2rem 1rem;
+	}
+
+	footer {
+		height: auto;
+	}
+	.footer_span {
+		display: flex;
+		flex-direction: column;
+	}
+}
