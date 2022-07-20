@@ -19,7 +19,7 @@ body {
 */
 
 :root {
-	--btn-bg: #dd0000;
+	--btn-bg: rgb(51, 143, 222);
 	--bg-shadow: 1px 1px 1px 2px rgba(0, 0, 0, 0.233);
 }
 
@@ -42,7 +42,6 @@ body {
 
 .btn {
 	border: none;
-
 	padding: 0.2rem 1rem;
 	border-radius: 5px;
 	cursor: pointer;
@@ -54,10 +53,12 @@ a {
 	background: white;
 	padding: 5px;
 	font-size: 15px;
+	color: black;
 }
 .active {
 	background-color: var(--btn-bg);
 	color: white;
+	font-weight: 800;
 }
 h1 {
 	margin-top: 2rem;
@@ -81,10 +82,26 @@ p {
 .section_header .header_left > button {
 	background-color: var(--btn-bg);
 	color: white;
-	transition: background 0.4s ease-in;
+	position: relative;
+	overflow: hidden;
 }
-.section_header .header_left > button:hover {
-	background: rgb(128, 167, 240);
+
+.section_header .header_left > button::after {
+	content: attr(data-extra);
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	/* padding: 2px 2px; */
+	border-radius: 5px;
+	background-color: purple;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	transition: transform 0.4s ease;
+	transform: translateY(-100%);
+}
+.section_header .header_left > button:hover::after {
+	transform: translateY(0%);
 }
 
 .header_left {
@@ -205,8 +222,13 @@ li i,
 li a {
 	font-size: 2rem;
 	display: inline-block;
-	border-collapse: black;
 	margin: 0 1rem;
+}
+
+footer ul li a {
+	text-decoration: none;
+	background: black;
+	color: white;
 }
 
 /* view all btn */
